@@ -3,11 +3,11 @@ import torch
 from ultralytics import YOLO
 
 # Load the YOLOv8 model (choose 'yolov8n.pt', 'yolov8s.pt', etc. for different sizes)
-model = YOLO('./runs/detect/train4/weights/last.pt')  # or another version of YOLOv8 (e.g., yolov8s.pt for small)
+model = YOLO('./runs/detect/train10/weights/last.pt')  # or another version of YOLOv8 (e.g., yolov8s.pt for small)
 
 # Load the video file
-input_video_path = 'source/duck-video.mp4'
-output_video_path = 'result/duck-video.mp4'
+input_video_path = 'source/dipstick-urobilinogen.mov'
+output_video_path = 'result/dipstick-urobilinogen-2.mov'
 
 # Open the video using OpenCV
 video_capture = cv2.VideoCapture(input_video_path)

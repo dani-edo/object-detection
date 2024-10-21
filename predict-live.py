@@ -60,10 +60,13 @@ while True:
             
             # Determine the parameter (e.g., Urobilinogen) from the class name
             parameter = class_name.split(":")[0].strip()  # Extract text before ':'
-            parameter_counts[parameter] += 1  # Increment count for the detected parameter
             
-            # Write the data into the Excel sheet
-            sheet.append([parameter, class_name, conf, int(x1), int(y1), int(x2), int(y2)])
+            # Only record data if the class is not "Dipstick Urine Test Card"
+            if class_name != "Dipstick Urine Test Card":
+                parameter_counts[parameter] += 1  # Increment count for the detected parameter
+                
+                # Write the data into the Excel sheet
+                sheet.append([parameter, class_name, conf, int(x1), int(y1), int(x2), int(y2)])
 
     # Display the resulting frame
     cv2.imshow('Dipstick Urine Test Live Detection', frame)
